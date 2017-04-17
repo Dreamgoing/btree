@@ -8,6 +8,8 @@
 #include "BtreeNode.hpp"
 #include <queue>
 
+///@todo thinking in how to use more advanced c++ programming skill
+
 using namespace std;
 
 template <class T>
