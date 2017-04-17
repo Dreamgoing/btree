@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wangruoxuan/ClionProjects/btree/Btree.hpp
+BtreeNode.hpp
+/Users/wangruoxuan/ClionProjects/btree/BtreeNode.hpp
+queue
+-
+
+/Users/wangruoxuan/ClionProjects/btree/BtreeNode.hpp
+vector
+-
+iostream
+-
+deque
+-
+
+/Users/wangruoxuan/ClionProjects/btree/main.cpp
+iostream
+-
+Btree.hpp
+/Users/wangruoxuan/ClionProjects/btree/Btree.hpp
+
