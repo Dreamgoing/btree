@@ -90,6 +90,10 @@ btree_EXTERNAL_OBJECTS =
 
 btree: CMakeFiles/btree.dir/main.cpp.o
 btree: CMakeFiles/btree.dir/build.make
+btree: /usr/local/lib/libboost_filesystem-mt.dylib
+btree: /usr/local/lib/libboost_regex-mt.dylib
+btree: /usr/local/lib/libboost_graph-mt.dylib
+btree: /usr/local/lib/libboost_system-mt.dylib
 btree: CMakeFiles/btree.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wangruoxuan/ClionProjects/btree/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable btree"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/btree.dir/link.txt --verbose=$(VERBOSE)

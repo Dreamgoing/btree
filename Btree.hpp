@@ -8,10 +8,12 @@
 #include "BtreeNode.hpp"
 #include <cassert>
 #include <queue>
-
+#include <boost/graph/adjacency_list.hpp>
+#include <boost/graph/graphviz.hpp>
 ///@todo thinking in how to use more advanced c++ programming skill
 
 using namespace std;
+using namespace boost;
 
 template <class T>
 class Btree {
@@ -41,6 +43,7 @@ public:
     void BFSshow();
     void DFSshow();
     void BtreeInsert(const T& k);
+    void showBTree();
 
     int getDegree();
 
@@ -248,6 +251,13 @@ void Btree<T>::BtreeInsertNonfull_(BtreeNode<T> *x, const T &k) {
         }
         BtreeInsertNonfull_(x->children[pos],k);
     }
+
+}
+
+template <class T>
+void Btree<T>::showBTree() {
+    typedef  adjacency_list< listS, vecS, undirectedS > undirectedGraph;
+    undirectedGraph graph1;
 
 }
 
