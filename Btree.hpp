@@ -6,6 +6,7 @@
 #define BTREE_BTREE_HPP
 
 #include "BtreeNode.hpp"
+#include <cassert>
 #include <queue>
 
 ///@todo thinking in how to use more advanced c++ programming skill
@@ -17,9 +18,11 @@ class Btree {
 
 private:
     BtreeNode<T>* root;
+
+
     int degree = 3;
     ///degree default construction set t = 3
-
+    ///@details: the maximum number of keys,and the keys current node contains range from [degree/2]-1 to degree-1
     ///nil
 
 
@@ -37,7 +40,7 @@ public:
     void BtreeCreate();
     void BFSshow();
     void DFSshow();
-    void BtreeInsert(BtreeNode<T>* now,const T& k);
+    void BtreeInsert(const T& k);
 
     int getDegree();
 
@@ -51,20 +54,20 @@ pair<BtreeNode<T>*, T> Btree<T>::BtreeSearch(BtreeNode<T> *now, const T &k) {
     }
     ///can use b_search
     int pos = 0;
-    while (pos<now->children.size()&&k>now->children[pos].first){
+    while (pos<now->keys.size()&&k>now->keys[pos].first){
         pos++;
     }
-    if(pos<now->children.size()&&k==now->children[pos].first){
+    if(pos<now->keys.size()&&k==now->keys[pos].first){
         ///found
-        return now->children[pos];
+        return now->keys[pos];
     }
 
     if(now->leaf){
         ///not found
         return make_pair(nullptr,-1);
     } else{
-        ///first Disk-read(now->children[pos])
-        return BtreeSearch(now->children[pos],k);
+        ///first Disk-read(now->keys[pos])
+        return BtreeSearch(now->keys[pos],k);
     }
 
 
@@ -78,7 +81,7 @@ void Btree<T>::BFSshow() {
         BtreeNode<T>* now = qu.front();
         now->showNode();
         qu.pop();
-        for(auto it:now->children){
+        for(auto it:now->keys){
             qu.push(it.second);
         }
     }
@@ -94,7 +97,7 @@ void Btree<T>::showNode_(BtreeNode<T> *node,int step) {
     }
     node->showNode();
     for(auto it:node->children){
-        showNode_(it.second,step+1);
+        showNode_(it,step+1);
     }
 
 }
@@ -102,7 +105,7 @@ void Btree<T>::showNode_(BtreeNode<T> *node,int step) {
 template <class T>
 Btree<T>::Btree(int degree):degree(degree) {
 
-    ///@param degree:the maximum number of children
+    ///@param degree:the maximum number of keys
     root = nullptr;
     BtreeCreate();
 }
@@ -135,12 +138,70 @@ void Btree<T>::BtreeSpilt_(BtreeNode<T> *x, int pos, BtreeNode<T> *y) {
 
     BtreeNode<T>* newNode = new BtreeNode<T>();
     newNode->leaf = y->leaf;
-    newNode->num = (size_t)degree-1;
+    for(int i = 0;i<degree/2;i++){
+        newNode->keys[i] = y->keys[i];
+    }
+    if(!y->leaf){
+        for(int i =0;i<=degree/2;i++){
+            newNode->children[i] = y->children[i];
+        }
+    }
+
+    ///get pushup key
+    T upKey = y->keys[degree/2];
+
+    ///reassign node y
+    vector<T> tmpKeys;
+    for(int i = degree/2+1;i<degree;i++){
+        tmpKeys.push_back(y->keys[i]);
+    }
+    vector<BtreeNode<T>* >tmpChildren;
+    for(int i = degree/2+1;i<=degree;i++){
+        tmpChildren.push_back(y->children[i]);
+    }
+    y->keys = tmpKeys;
+    y->children = tmpChildren;
+
+
+    newNode->num = newNode->keys.size();
+    y->num = y->keys.size();
+
+    ///insert newNode and key into x->children
+    x->children.insert(x->children.begin()+pos,newNode);
+    x->keys.insert(x->keys.begin()+pos,upKey);
+
+    ///fix x->num
+    assert(x->num+1==x->keys.size());
+
+    x->num = x->num+1;
+
+    ///or
+    x->num = x->keys.size();
+
+
+    ///Disk-Write(y)
+    ///Disk-Write(z)
+    ///Disk-Write(x)
+
+
+
+
 
 }
 
 template <class T>
-void Btree<T>::BtreeInsert(BtreeNode<T> *now, const T &k) {
+void Btree<T>::BtreeInsert(const T &k) {
+    BtreeNode<T>* tmpRoot = root;
+    if(tmpRoot->num==degree-1){
+        BtreeNode<T>* node = new BtreeNode<T>;
+        root = node;
+        node->leaf = false;
+        node->children.push_back(tmpRoot);
+        BtreeSpilt_(node,0,tmpRoot);
+        BtreeInsertNonfull_(node,k);
+    } else{
+        BtreeInsertNonfull_(tmpRoot,k);
+    }
 
 }
 
@@ -151,16 +212,43 @@ int Btree<T>::getDegree() {
 }
 
 template <class T>
-void Btree::BtreeInsertNonfull_(BtreeNode<T> *x, const T &k) {
+void Btree<T>::BtreeInsertNonfull_(BtreeNode<T> *x, const T &k) {
     ///use std::deque finish insert
-    auto it;
-    for(it:x->children){
-        if(it.first>k){
+
+
+    int pos = 0;
+
+    ///found the index which should be insert
+    for(auto it:x->keys){
+        if(it>k){
             break;
         }
+        pos++;
     }
-    x->children.insert(it,make_pair(k,new BtreeNode));
-    x->num = x->children.size();
+    if(x->leaf){
+        ///插入一个节点最终插入到叶子节点的父节点上面去
+        ///x为叶节点时，直接插入，因为之前已经可能进行过分割操作，保证了叶节点不满
+        x->keys.insert(x->keys.begin()+pos,k);
+        x->num = x->keys.size();
+        ///Disk-Read(x)
+    } else{
+        ///Disk-Read(it)
+        BtreeNode<T>* child = x->children[pos];
+        if(child== nullptr){
+            ///error
+            cerr<<"child is nullptr "<<endl;
+            return;
+        }
+        if(child->num==degree-1){
+            ///spilt child
+            BtreeSpilt_(x,pos,child);
+            if(k>x->keys[pos]){
+                pos++;
+            }
+        }
+        BtreeInsertNonfull_(x->children[pos],k);
+    }
+
 }
 
 

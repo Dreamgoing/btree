@@ -18,7 +18,8 @@ public:
     BtreeNode(){}
     BtreeNode(const T& t):key(t),num(0){}
 public:
-    deque<pair<T,BtreeNode*> >children;
+    vector<BtreeNode<T>*> children;
+    vector<T> keys;
     T key;
     size_t num;
     size_t size;
@@ -27,7 +28,9 @@ public:
     ///一部分磁盘块文件
 
     void showNode(){
-        cout<<key<<" ";
+        for(auto it:keys){
+            cout<<it<<" ";
+        }
     }
 
 

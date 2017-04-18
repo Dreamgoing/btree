@@ -12,9 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="666a2ee3-2abc-428a-ae73-68bb99e7872a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/btree.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/btree.dir/main.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/btree" afterPath="$PROJECT_DIR$/cmake-build-debug/btree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Btree.hpp" afterPath="$PROJECT_DIR$/Btree.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BtreeNode.hpp" afterPath="$PROJECT_DIR$/BtreeNode.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/btree.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/btree.dir/CXX.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +44,9 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="19" lean-forward="true" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,21 +54,21 @@
       <file leaf-file-name="Btree.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Btree.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
+            <state relative-caret-position="-1725">
+              <caret line="99" column="20" lean-forward="false" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
               <folding>
                 <element signature="e#86#110#0" expanded="true" />
-                <element signature="e#229#238#0" expanded="true" />
-                <element signature="e#800#809#0" expanded="true" />
-                <element signature="e#1433#1442#0" expanded="true" />
-                <element signature="e#1722#1731#0" expanded="true" />
-                <element signature="e#2002#2011#0" expanded="true" />
-                <element signature="e#2161#2170#0" expanded="true" />
-                <element signature="e#2343#2352#0" expanded="true" />
-                <element signature="e#2416#2425#0" expanded="true" />
-                <element signature="e#2767#2776#0" expanded="true" />
-                <element signature="e#2850#2859#0" expanded="true" />
-                <element signature="e#2920#2929#0" expanded="true" />
+                <element signature="e#248#257#0" expanded="true" />
+                <element signature="e#917#926#0" expanded="true" />
+                <element signature="e#1522#1531#0" expanded="true" />
+                <element signature="e#1807#1816#0" expanded="true" />
+                <element signature="e#2080#2089#0" expanded="true" />
+                <element signature="e#2235#2244#0" expanded="true" />
+                <element signature="e#2417#2426#0" expanded="true" />
+                <element signature="e#2490#2499#0" expanded="true" />
+                <element signature="e#3801#3810#0" expanded="true" />
+                <element signature="e#4202#4211#0" expanded="true" />
+                <element signature="e#4272#4281#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +77,8 @@
       <file leaf-file-name="BtreeNode.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BtreeNode.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="31" column="18" lean-forward="false" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
               <folding>
                 <element signature="e#94#111#0" expanded="true" />
                 <element signature="e#181#190#0" expanded="true" />
@@ -87,6 +89,14 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>children</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>keys</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -94,9 +104,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Btree.hpp" />
         <option value="$PROJECT_DIR$/BtreeNode.hpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/Btree.hpp" />
       </list>
     </option>
   </component>
@@ -452,12 +462,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492423251944</updated>
-      <workItem from="1492423253710" duration="7666000" />
+      <workItem from="1492423253710" duration="16697000" />
     </task>
+    <task id="LOCAL-00001" summary="insert function">
+      <created>1492446799792</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1492446799792</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7666000" />
+    <option name="totallyTimeSpent" value="16697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -494,6 +512,8 @@
     <ignored-roots>
       <path value="$USER_HOME$" />
     </ignored-roots>
+    <MESSAGE value="insert function" />
+    <option name="LAST_COMMIT_MESSAGE" value="insert function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -510,18 +530,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="true" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BtreeNode.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="31" column="18" lean-forward="false" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
             <element signature="e#94#111#0" expanded="true" />
             <element signature="e#181#190#0" expanded="true" />
@@ -531,21 +549,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Btree.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
+        <state relative-caret-position="-1725">
+          <caret line="99" column="20" lean-forward="false" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
           <folding>
             <element signature="e#86#110#0" expanded="true" />
-            <element signature="e#229#238#0" expanded="true" />
-            <element signature="e#800#809#0" expanded="true" />
-            <element signature="e#1433#1442#0" expanded="true" />
-            <element signature="e#1722#1731#0" expanded="true" />
-            <element signature="e#2002#2011#0" expanded="true" />
-            <element signature="e#2161#2170#0" expanded="true" />
-            <element signature="e#2343#2352#0" expanded="true" />
-            <element signature="e#2416#2425#0" expanded="true" />
-            <element signature="e#2767#2776#0" expanded="true" />
-            <element signature="e#2850#2859#0" expanded="true" />
-            <element signature="e#2920#2929#0" expanded="true" />
+            <element signature="e#248#257#0" expanded="true" />
+            <element signature="e#917#926#0" expanded="true" />
+            <element signature="e#1522#1531#0" expanded="true" />
+            <element signature="e#1807#1816#0" expanded="true" />
+            <element signature="e#2080#2089#0" expanded="true" />
+            <element signature="e#2235#2244#0" expanded="true" />
+            <element signature="e#2417#2426#0" expanded="true" />
+            <element signature="e#2490#2499#0" expanded="true" />
+            <element signature="e#3801#3810#0" expanded="true" />
+            <element signature="e#4202#4211#0" expanded="true" />
+            <element signature="e#4272#4281#0" expanded="true" />
           </folding>
         </state>
       </provider>
