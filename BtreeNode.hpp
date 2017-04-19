@@ -23,7 +23,7 @@ public:
     T key;
     size_t num;
     size_t size;
-    bool leaf = false;
+    bool leaf = true;
 
     ///一部分磁盘块文件
 
@@ -31,6 +31,7 @@ public:
         for(auto it:keys){
             cout<<it<<" ";
         }
+        cout<<'\n';
     }
 
 

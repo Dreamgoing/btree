@@ -10,7 +10,7 @@ void testBtreeInsert(){
     Btree<int> btree;
     btree.BtreeInsert(1);
     btree.BtreeInsert(2);
-//    btree.BtreeInsert(3);
+    btree.BtreeInsert(3);
 //    btree.BtreeInsert(4);
     btree.DFSshow();
 }
@@ -49,7 +49,7 @@ int main() {
 //    Btree<string> a;
 //    cout<<btree.getDegree()<<endl;
 //    cout<<a.getDegree()<<endl;
-//    testBtreeInsert();
+    testBtreeInsert();
 
 //    testGraph();
     return 0;

@@ -141,24 +141,36 @@ void Btree<T>::BtreeSpilt_(BtreeNode<T> *x, int pos, BtreeNode<T> *y) {
 
     BtreeNode<T>* newNode = new BtreeNode<T>();
     newNode->leaf = y->leaf;
+    ///newNode resize
+    newNode->keys.resize(degree/2);
+//    cerr<<y->keys.size()<<endl;
     for(int i = 0;i<degree/2;i++){
         newNode->keys[i] = y->keys[i];
     }
+    newNode->num = newNode->keys.size();
+    ///or to resize newNode size
+    newNode->children.resize((unsigned long) (degree / 2 + 1));
     if(!y->leaf){
         for(int i =0;i<=degree/2;i++){
-            newNode->children[i] = y->children[i];
+            newNode->children[i]=y->children[i];
         }
     }
 
     ///get pushup key
     T upKey = y->keys[degree/2];
 
+
+
     ///reassign node y
     vector<T> tmpKeys;
+    tmpKeys.clear();
     for(int i = degree/2+1;i<degree;i++){
         tmpKeys.push_back(y->keys[i]);
     }
     vector<BtreeNode<T>* >tmpChildren;
+    tmpChildren.clear();
+
+    ///memory error
     for(int i = degree/2+1;i<=degree;i++){
         tmpChildren.push_back(y->children[i]);
     }
@@ -166,6 +178,7 @@ void Btree<T>::BtreeSpilt_(BtreeNode<T> *x, int pos, BtreeNode<T> *y) {
     y->children = tmpChildren;
 
 
+//    cout<<upKey<<endl;
     newNode->num = newNode->keys.size();
     y->num = y->keys.size();
 
