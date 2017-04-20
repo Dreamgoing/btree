@@ -15,8 +15,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/btree.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/btree.dir/main.cpp.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/btree" afterPath="$PROJECT_DIR$/cmake-build-debug/btree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Btree.hpp" afterPath="$PROJECT_DIR$/Btree.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -389,7 +387,7 @@
       <workItem from="1492423253710" duration="16854000" />
       <workItem from="1492535827387" duration="6445000" />
       <workItem from="1492591003099" duration="272000" />
-      <workItem from="1492665078605" duration="2886000" />
+      <workItem from="1492665078605" duration="2907000" />
     </task>
     <task id="LOCAL-00001" summary="insert function">
       <created>1492446799792</created>
@@ -426,11 +424,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492665101059</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="finish insert Test">
+      <created>1492671070204</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1492671070204</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26457000" />
+    <option name="totallyTimeSpent" value="26478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -468,7 +473,8 @@
     </ignored-roots>
     <MESSAGE value="insert function" />
     <MESSAGE value="use boost to draw tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="use boost to draw tree" />
+    <MESSAGE value="finish insert Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish insert Test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
