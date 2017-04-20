@@ -8,9 +8,12 @@
 #include "BtreeNode.hpp"
 #include <cassert>
 #include <queue>
+#include <map>
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/graphviz.hpp>
 ///@todo thinking in how to use more advanced c++ programming skill
+///@todo how to implement the iterator of the Btree
+///@todo thinking use smart ptr  to manager memory
 
 using namespace std;
 using namespace boost;
@@ -21,12 +24,16 @@ class Btree {
 private:
     BtreeNode<T>* root;
 
+    map<BtreeNode<T>*,int> nodeID;
+
+    vector<BtreeNode<T>*> nodeSet;
 
     int degree = 3;
     ///degree default construction set t = 3
     ///@details: the maximum number of keys,and the keys current node contains range from [degree/2]-1 to degree-1
     ///nil
 
+    int nodeNum = 0;
 
 private:
     void showNode_(BtreeNode<T>* node,int step);
@@ -34,6 +41,10 @@ private:
     void BtreeSpilt_(BtreeNode<T>* x,int pos,BtreeNode<T>* y);
 
     void BtreeInsertNonfull_(BtreeNode<T>* x,const T& k);
+
+    void updateNodeID_();
+
+    void updateNodeSet_();
 
 
 public:
@@ -44,8 +55,11 @@ public:
     void DFSshow();
     void BtreeInsert(const T& k);
     void showBTree();
-
+    int getNodeID(BtreeNode<T>* node);
+    vector<vector<string> >getAllPath();
     int getDegree();
+
+    ///@todo destroy tree
 
 };
 
@@ -76,6 +90,8 @@ pair<BtreeNode<T>*, T> Btree<T>::BtreeSearch(BtreeNode<T> *now, const T &k) {
 
 }
 
+
+///@todo consider how to pass a function to implement traversal
 template <class T>
 void Btree<T>::BFSshow() {
     queue<BtreeNode<T>*> qu;
@@ -117,6 +133,7 @@ template <class T>
 void Btree<T>::BtreeCreate() {
     if(root== nullptr){
         root = new BtreeNode<T>();
+        nodeNum++;
     }
     root->leaf = true;
     root->num = 0;
@@ -140,6 +157,7 @@ void Btree<T>::BtreeSpilt_(BtreeNode<T> *x, int pos, BtreeNode<T> *y) {
      * */
 
     BtreeNode<T>* newNode = new BtreeNode<T>();
+    nodeNum++;
     newNode->leaf = y->leaf;
     ///newNode resize
     newNode->keys.resize(degree/2);
@@ -213,6 +231,8 @@ void Btree<T>::BtreeInsert(const T &k) {
     BtreeNode<T>* tmpRoot = root;
     if(tmpRoot->num==degree-1){
         BtreeNode<T>* node = new BtreeNode<T>;
+        nodeNum++;
+
         root = node;
         node->leaf = false;
         node->children.push_back(tmpRoot);
@@ -277,6 +297,42 @@ void Btree<T>::showBTree() {
     typedef  adjacency_list< listS, vecS, undirectedS > undirectedGraph;
     undirectedGraph graph1;
 
+}
+
+template <class T>
+vector<vector<string> > Btree<T>::getAllPath() {
+
+}
+
+template<class T>
+void Btree<T>::updateNodeSet_() {
+    nodeSet.clear();
+    ///lazy flag to ensure nodeID updated
+    for(auto it:nodeID){
+        nodeSet.push_back(it->first);
+    }
+    ///update lazy flag
+}
+
+template<class T>
+void Btree<T>::updateNodeID_() {
+    nodeSet.clear();
+    int id = 1;
+    ///traversal
+    queue<BtreeNode<T>* >qu;
+    qu.push(root);
+    
+
+}
+
+template <class T>
+int Btree<T>::getNodeID(BtreeNode<T> *node) {
+    auto it = nodeID.find(node);
+    if(it==nodeID.end()){
+        return -1;
+    }else{
+        return it->second;
+    }
 }
 
 

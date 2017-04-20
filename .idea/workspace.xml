@@ -12,9 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="666a2ee3-2abc-428a-ae73-68bb99e7872a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/btree.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/btree.dir/main.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/btree" afterPath="$PROJECT_DIR$/cmake-build-debug/btree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BtreeVisualize.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Btree.hpp" afterPath="$PROJECT_DIR$/Btree.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BtreeNode.hpp" afterPath="$PROJECT_DIR$/BtreeNode.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/btree.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/btree.cbp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,18 +33,18 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+            <state relative-caret-position="75">
+              <caret line="5" column="68" lean-forward="false" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+            <state relative-caret-position="180">
+              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
                 <element signature="e#579#1024#0" expanded="false" />
@@ -50,36 +53,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Btree.hpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Btree.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Btree.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="266" column="22" lean-forward="true" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
+            <state relative-caret-position="4529">
+              <caret line="323" column="4" lean-forward="false" selection-start-line="323" selection-start-column="4" selection-end-line="323" selection-end-column="4" />
               <folding>
                 <element signature="e#86#110#0" expanded="true" />
-                <element signature="e#348#357#0" expanded="true" />
-                <element signature="e#1039#1048#0" expanded="true" />
-                <element signature="e#1644#1653#0" expanded="true" />
-                <element signature="e#1929#1938#0" expanded="true" />
-                <element signature="e#2202#2211#0" expanded="true" />
-                <element signature="e#2357#2366#0" expanded="true" />
-                <element signature="e#2539#2548#0" expanded="true" />
-                <element signature="e#2612#2621#0" expanded="true" />
-                <element signature="e#4307#4316#0" expanded="true" />
-                <element signature="e#4736#4745#0" expanded="true" />
-                <element signature="e#4806#4815#0" expanded="true" />
-                <element signature="e#5738#5747#0" expanded="true" />
+                <element signature="e#466#475#0" expanded="true" />
+                <element signature="e#1410#1419#0" expanded="true" />
+                <element signature="e#2080#2089#0" expanded="true" />
+                <element signature="e#2365#2374#0" expanded="true" />
+                <element signature="e#2638#2647#0" expanded="true" />
+                <element signature="e#2793#2802#0" expanded="true" />
+                <element signature="e#2994#3003#0" expanded="true" />
+                <element signature="e#3067#3076#0" expanded="true" />
+                <element signature="e#4777#4786#0" expanded="true" />
+                <element signature="e#5226#5235#0" expanded="true" />
+                <element signature="e#5296#5305#0" expanded="true" />
+                <element signature="e#6228#6237#0" expanded="true" />
+                <element signature="e#6381#6390#0" expanded="true" />
+                <element signature="e#6452#6461#0" expanded="true" />
+                <element signature="e#6663#6672#0" expanded="true" />
+                <element signature="e#6826#6835#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memory" pinned="false" current-in-tab="false">
-        <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory">
+      <file leaf-file-name="BtreeVisualize.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BtreeVisualize.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1581" column="0" lean-forward="false" selection-start-line="1581" selection-start-column="0" selection-end-line="1581" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="285">
+              <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+              <folding>
+                <element signature="e#36#55#0" expanded="true" />
+                <element signature="e#262#271#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,8 +97,8 @@
       <file leaf-file-name="BtreeNode.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BtreeNode.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+            <state relative-caret-position="645">
+              <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
               <folding>
                 <element signature="e#94#111#0" expanded="true" />
                 <element signature="e#181#190#0" expanded="true" />
@@ -113,10 +123,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/BtreeNode.hpp" />
+        <option value="$PROJECT_DIR$/BtreeVisualize.hpp" />
         <option value="$PROJECT_DIR$/Btree.hpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -132,7 +143,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -145,22 +156,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btree" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="btree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -387,7 +383,9 @@
       <workItem from="1492423253710" duration="16854000" />
       <workItem from="1492535827387" duration="6445000" />
       <workItem from="1492591003099" duration="272000" />
-      <workItem from="1492665078605" duration="2907000" />
+      <workItem from="1492665078605" duration="2978000" />
+      <workItem from="1492671441237" duration="60000" />
+      <workItem from="1492701778913" duration="4103000" />
     </task>
     <task id="LOCAL-00001" summary="insert function">
       <created>1492446799792</created>
@@ -431,28 +429,36 @@
       <option name="project" value="LOCAL" />
       <updated>1492671070204</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="finish insert Test">
+      <created>1492671073733</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1492671073733</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26478000" />
+    <option name="totallyTimeSpent" value="30712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21890146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2253635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -478,24 +484,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Btree.hpp</url>
-          <line>149</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Btree.hpp</url>
-          <line>180</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Btree.hpp</url>
-          <line>188</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -507,6 +496,125 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#579#1024#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BtreeNode.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="e#94#111#0" expanded="true" />
+            <element signature="e#181#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Btree.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3990">
+          <caret line="266" column="22" lean-forward="true" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
+          <folding>
+            <element signature="e#86#110#0" expanded="true" />
+            <element signature="e#466#475#0" expanded="true" />
+            <element signature="e#1410#1419#0" expanded="true" />
+            <element signature="e#2080#2089#0" expanded="true" />
+            <element signature="e#2365#2374#0" expanded="true" />
+            <element signature="e#2638#2647#0" expanded="true" />
+            <element signature="e#2793#2802#0" expanded="true" />
+            <element signature="e#2994#3003#0" expanded="true" />
+            <element signature="e#3067#3076#0" expanded="true" />
+            <element signature="e#4777#4786#0" expanded="true" />
+            <element signature="e#5226#5235#0" expanded="true" />
+            <element signature="e#5296#5305#0" expanded="true" />
+            <element signature="e#6228#6237#0" expanded="true" />
+            <element signature="e#6381#6390#0" expanded="true" />
+            <element signature="e#6452#6461#0" expanded="true" />
+            <element signature="e#6663#6672#0" expanded="true" />
+            <element signature="e#6826#6835#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Btree.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3990">
+          <caret line="266" column="22" lean-forward="true" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
+          <folding>
+            <element signature="e#86#110#0" expanded="true" />
+            <element signature="e#466#475#0" expanded="true" />
+            <element signature="e#1410#1419#0" expanded="true" />
+            <element signature="e#2080#2089#0" expanded="true" />
+            <element signature="e#2365#2374#0" expanded="true" />
+            <element signature="e#2638#2647#0" expanded="true" />
+            <element signature="e#2793#2802#0" expanded="true" />
+            <element signature="e#2994#3003#0" expanded="true" />
+            <element signature="e#3067#3076#0" expanded="true" />
+            <element signature="e#4777#4786#0" expanded="true" />
+            <element signature="e#5226#5235#0" expanded="true" />
+            <element signature="e#5296#5305#0" expanded="true" />
+            <element signature="e#6228#6237#0" expanded="true" />
+            <element signature="e#6381#6390#0" expanded="true" />
+            <element signature="e#6452#6461#0" expanded="true" />
+            <element signature="e#6663#6672#0" expanded="true" />
+            <element signature="e#6826#6835#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23715">
+          <caret line="1581" column="0" lean-forward="false" selection-start-line="1581" selection-start-column="0" selection-end-line="1581" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BtreeNode.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="e#94#111#0" expanded="true" />
+            <element signature="e#181#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#579#1024#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -543,18 +651,22 @@
           <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           <folding>
             <element signature="e#86#110#0" expanded="true" />
-            <element signature="e#348#357#0" expanded="true" />
-            <element signature="e#1039#1048#0" expanded="true" />
-            <element signature="e#1644#1653#0" expanded="true" />
-            <element signature="e#1929#1938#0" expanded="true" />
-            <element signature="e#2202#2211#0" expanded="true" />
-            <element signature="e#2357#2366#0" expanded="true" />
-            <element signature="e#2539#2548#0" expanded="true" />
-            <element signature="e#2612#2621#0" expanded="true" />
-            <element signature="e#4307#4316#0" expanded="true" />
-            <element signature="e#4736#4745#0" expanded="true" />
-            <element signature="e#4806#4815#0" expanded="true" />
-            <element signature="e#5738#5747#0" expanded="true" />
+            <element signature="e#466#475#0" expanded="true" />
+            <element signature="e#1410#1419#0" expanded="true" />
+            <element signature="e#2080#2089#0" expanded="true" />
+            <element signature="e#2365#2374#0" expanded="true" />
+            <element signature="e#2638#2647#0" expanded="true" />
+            <element signature="e#2793#2802#0" expanded="true" />
+            <element signature="e#2994#3003#0" expanded="true" />
+            <element signature="e#3067#3076#0" expanded="true" />
+            <element signature="e#4777#4786#0" expanded="true" />
+            <element signature="e#5226#5235#0" expanded="true" />
+            <element signature="e#5296#5305#0" expanded="true" />
+            <element signature="e#6228#6237#0" expanded="true" />
+            <element signature="e#6381#6390#0" expanded="true" />
+            <element signature="e#6452#6461#0" expanded="true" />
+            <element signature="e#6663#6672#0" expanded="true" />
+            <element signature="e#6826#6835#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -595,18 +707,22 @@
           <caret line="172" column="19" lean-forward="false" selection-start-line="172" selection-start-column="19" selection-end-line="172" selection-end-column="19" />
           <folding>
             <element signature="e#86#110#0" expanded="true" />
-            <element signature="e#348#357#0" expanded="true" />
-            <element signature="e#1039#1048#0" expanded="true" />
-            <element signature="e#1644#1653#0" expanded="true" />
-            <element signature="e#1929#1938#0" expanded="true" />
-            <element signature="e#2202#2211#0" expanded="true" />
-            <element signature="e#2357#2366#0" expanded="true" />
-            <element signature="e#2539#2548#0" expanded="true" />
-            <element signature="e#2612#2621#0" expanded="true" />
-            <element signature="e#4307#4316#0" expanded="true" />
-            <element signature="e#4736#4745#0" expanded="true" />
-            <element signature="e#4806#4815#0" expanded="true" />
-            <element signature="e#5738#5747#0" expanded="true" />
+            <element signature="e#466#475#0" expanded="true" />
+            <element signature="e#1410#1419#0" expanded="true" />
+            <element signature="e#2080#2089#0" expanded="true" />
+            <element signature="e#2365#2374#0" expanded="true" />
+            <element signature="e#2638#2647#0" expanded="true" />
+            <element signature="e#2793#2802#0" expanded="true" />
+            <element signature="e#2994#3003#0" expanded="true" />
+            <element signature="e#3067#3076#0" expanded="true" />
+            <element signature="e#4777#4786#0" expanded="true" />
+            <element signature="e#5226#5235#0" expanded="true" />
+            <element signature="e#5296#5305#0" expanded="true" />
+            <element signature="e#6228#6237#0" expanded="true" />
+            <element signature="e#6381#6390#0" expanded="true" />
+            <element signature="e#6452#6461#0" expanded="true" />
+            <element signature="e#6663#6672#0" expanded="true" />
+            <element signature="e#6826#6835#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -647,18 +763,22 @@
           <caret line="99" column="20" lean-forward="false" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
           <folding>
             <element signature="e#86#110#0" expanded="true" />
-            <element signature="e#348#357#0" expanded="true" />
-            <element signature="e#1039#1048#0" expanded="true" />
-            <element signature="e#1644#1653#0" expanded="true" />
-            <element signature="e#1929#1938#0" expanded="true" />
-            <element signature="e#2202#2211#0" expanded="true" />
-            <element signature="e#2357#2366#0" expanded="true" />
-            <element signature="e#2539#2548#0" expanded="true" />
-            <element signature="e#2612#2621#0" expanded="true" />
-            <element signature="e#4307#4316#0" expanded="true" />
-            <element signature="e#4736#4745#0" expanded="true" />
-            <element signature="e#4806#4815#0" expanded="true" />
-            <element signature="e#5738#5747#0" expanded="true" />
+            <element signature="e#466#475#0" expanded="true" />
+            <element signature="e#1410#1419#0" expanded="true" />
+            <element signature="e#2080#2089#0" expanded="true" />
+            <element signature="e#2365#2374#0" expanded="true" />
+            <element signature="e#2638#2647#0" expanded="true" />
+            <element signature="e#2793#2802#0" expanded="true" />
+            <element signature="e#2994#3003#0" expanded="true" />
+            <element signature="e#3067#3076#0" expanded="true" />
+            <element signature="e#4777#4786#0" expanded="true" />
+            <element signature="e#5226#5235#0" expanded="true" />
+            <element signature="e#5296#5305#0" expanded="true" />
+            <element signature="e#6228#6237#0" expanded="true" />
+            <element signature="e#6381#6390#0" expanded="true" />
+            <element signature="e#6452#6461#0" expanded="true" />
+            <element signature="e#6663#6672#0" expanded="true" />
+            <element signature="e#6826#6835#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -698,18 +818,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1581" column="0" lean-forward="false" selection-start-line="1581" selection-start-column="0" selection-end-line="1581" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        <state relative-caret-position="75">
+          <caret line="5" column="68" lean-forward="false" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BtreeNode.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        <state relative-caret-position="645">
+          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
           <folding>
             <element signature="e#94#111#0" expanded="true" />
             <element signature="e#181#190#0" expanded="true" />
@@ -717,43 +844,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory">
+    <entry file="file://$PROJECT_DIR$/BtreeVisualize.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1581" column="0" lean-forward="false" selection-start-line="1581" selection-start-column="0" selection-end-line="1581" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Btree.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="266" column="22" lean-forward="true" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
+        <state relative-caret-position="285">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
           <folding>
-            <element signature="e#86#110#0" expanded="true" />
-            <element signature="e#348#357#0" expanded="true" />
-            <element signature="e#1039#1048#0" expanded="true" />
-            <element signature="e#1644#1653#0" expanded="true" />
-            <element signature="e#1929#1938#0" expanded="true" />
-            <element signature="e#2202#2211#0" expanded="true" />
-            <element signature="e#2357#2366#0" expanded="true" />
-            <element signature="e#2539#2548#0" expanded="true" />
-            <element signature="e#2612#2621#0" expanded="true" />
-            <element signature="e#4307#4316#0" expanded="true" />
-            <element signature="e#4736#4745#0" expanded="true" />
-            <element signature="e#4806#4815#0" expanded="true" />
-            <element signature="e#5738#5747#0" expanded="true" />
+            <element signature="e#36#55#0" expanded="true" />
+            <element signature="e#262#271#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        <state relative-caret-position="180">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
             <element signature="e#579#1024#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Btree.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4529">
+          <caret line="323" column="4" lean-forward="false" selection-start-line="323" selection-start-column="4" selection-end-line="323" selection-end-column="4" />
+          <folding>
+            <element signature="e#86#110#0" expanded="true" />
+            <element signature="e#466#475#0" expanded="true" />
+            <element signature="e#1410#1419#0" expanded="true" />
+            <element signature="e#2080#2089#0" expanded="true" />
+            <element signature="e#2365#2374#0" expanded="true" />
+            <element signature="e#2638#2647#0" expanded="true" />
+            <element signature="e#2793#2802#0" expanded="true" />
+            <element signature="e#2994#3003#0" expanded="true" />
+            <element signature="e#3067#3076#0" expanded="true" />
+            <element signature="e#4777#4786#0" expanded="true" />
+            <element signature="e#5226#5235#0" expanded="true" />
+            <element signature="e#5296#5305#0" expanded="true" />
+            <element signature="e#6228#6237#0" expanded="true" />
+            <element signature="e#6381#6390#0" expanded="true" />
+            <element signature="e#6452#6461#0" expanded="true" />
+            <element signature="e#6663#6672#0" expanded="true" />
+            <element signature="e#6826#6835#0" expanded="true" />
           </folding>
         </state>
       </provider>

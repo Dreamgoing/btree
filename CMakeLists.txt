@@ -3,7 +3,7 @@ project(btree)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp Btree.hpp BtreeNode.hpp )
+set(SOURCE_FILES main.cpp Btree.hpp BtreeNode.hpp BtreeVisualize.hpp)
 #target_link_libraries(/usr/local/include/graphviz)
 #find_package(/usr/local/include/graphviz)
 #file(GLOB graph "/usr/local/include/graphviz/*.h")

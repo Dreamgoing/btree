@@ -88,6 +88,9 @@
 		<Unit filename="/Users/wangruoxuan/ClionProjects/btree/BtreeNode.hpp">
 			<Option target="btree"/>
 		</Unit>
+		<Unit filename="/Users/wangruoxuan/ClionProjects/btree/BtreeVisualize.hpp">
+			<Option target="btree"/>
+		</Unit>
 		<Unit filename="/Users/wangruoxuan/ClionProjects/btree/main.cpp">
 			<Option target="btree"/>
 		</Unit>

@@ -33,6 +33,16 @@ public:
         }
         cout<<'\n';
     }
+    string getKeys(){
+        string res;
+        res.clear();
+        res = "| ";
+        for(auto it:keys){
+            res+=to_string(it);
+            res+=" | ";
+        }
+        return res;
+    }
 
 
 };
