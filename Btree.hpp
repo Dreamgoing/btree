@@ -159,21 +159,24 @@ void Btree<T>::BtreeSpilt_(BtreeNode<T> *x, int pos, BtreeNode<T> *y) {
     ///get pushup key
     T upKey = y->keys[degree/2];
 
-
+//    cout<<upKey<<endl;
 
     ///reassign node y
     vector<T> tmpKeys;
     tmpKeys.clear();
-    for(int i = degree/2+1;i<degree;i++){
+    for(int i = degree/2+1;i<degree-1;i++){
         tmpKeys.push_back(y->keys[i]);
     }
     vector<BtreeNode<T>* >tmpChildren;
     tmpChildren.clear();
 
     ///memory error
-    for(int i = degree/2+1;i<=degree;i++){
-        tmpChildren.push_back(y->children[i]);
+    if(!y->leaf){
+        for(int i = degree/2+1;i<degree;i++){
+            tmpChildren.push_back(y->children[i]);
+        }
     }
+
     y->keys = tmpKeys;
     y->children = tmpChildren;
 
@@ -213,6 +216,7 @@ void Btree<T>::BtreeInsert(const T &k) {
         root = node;
         node->leaf = false;
         node->children.push_back(tmpRoot);
+//        cout<<"ok"<<endl;
         BtreeSpilt_(node,0,tmpRoot);
         BtreeInsertNonfull_(node,k);
     } else{
@@ -258,6 +262,7 @@ void Btree<T>::BtreeInsertNonfull_(BtreeNode<T> *x, const T &k) {
         if(child->num==degree-1){
             ///spilt child
             BtreeSpilt_(x,pos,child);
+
             if(k>x->keys[pos]){
                 pos++;
             }

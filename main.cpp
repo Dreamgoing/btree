@@ -8,11 +8,23 @@ using namespace boost;
 
 void testBtreeInsert(){
     Btree<int> btree;
-    btree.BtreeInsert(1);
-    btree.BtreeInsert(2);
-    btree.BtreeInsert(3);
+//    btree.BtreeInsert(1);
+//    btree.BtreeInsert(2);
+//    btree.BtreeInsert(3);
 //    btree.BtreeInsert(4);
+//    btree.BtreeInsert(5);
+//    btree.BtreeInsert(6);
     btree.DFSshow();
+    int x;
+    while (cin>>x){
+        btree.BtreeInsert(x);
+        cout<<"\n########\n";
+        btree.DFSshow();
+        cout<<"\n########\n";
+    }
+
+
+//    btree.DFSshow();
 }
 void testGraph(){
 
