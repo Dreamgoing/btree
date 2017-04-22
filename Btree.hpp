@@ -18,6 +18,9 @@
 using namespace std;
 using namespace boost;
 
+template<class T>
+void visitNode_(BtreeNode<T> *node);
+
 template <class T>
 class Btree {
 
@@ -35,8 +38,12 @@ private:
 
     int nodeNum = 0;
 
+    int nodeIDnum = 1;
+
+
 private:
-    void showNode_(BtreeNode<T>* node,int step);
+//public:
+    void showNode_(BtreeNode<T>* node,int step,void (*func)(BtreeNode<T>*));
 
     void BtreeSpilt_(BtreeNode<T>* x,int pos,BtreeNode<T>* y);
 
@@ -46,6 +53,9 @@ private:
 
     void updateNodeSet_();
 
+    void mapNode_(BtreeNode<T>* node);
+
+    friend void visitNode_(BtreeNode<T>* node);
 
 public:
     Btree(int t = 3);
@@ -59,6 +69,7 @@ public:
     vector<vector<string> >getAllPath();
     int getDegree();
 
+
     ///@todo destroy tree
 
 };
@@ -70,6 +81,7 @@ pair<BtreeNode<T>*, T> Btree<T>::BtreeSearch(BtreeNode<T> *now, const T &k) {
         return make_pair(nullptr,-1);
     }
     ///can use b_search
+
     int pos = 0;
     while (pos<now->keys.size()&&k>now->keys[pos].first){
         pos++;
@@ -106,17 +118,18 @@ void Btree<T>::BFSshow() {
     }
 }
 
+
 template <class T>
-void Btree<T>::showNode_(BtreeNode<T> *node,int step) {
+void Btree<T>::showNode_(BtreeNode<T> *node,int step,void (*func)(BtreeNode<T>*)) {
     if(node== nullptr){
         return;
     }
     for(int i = 0;i<step;i++){
         cout<<"  ";
     }
-    node->showNode();
+    func(node);
     for(auto it:node->children){
-        showNode_(it,step+1);
+        showNode_(it,step+1,func);
     }
 
 }
@@ -143,7 +156,12 @@ void Btree<T>::BtreeCreate() {
 
 template <class T>
 void Btree<T>::DFSshow() {
-    showNode_(root,0);
+    void (*ptr)(BtreeNode<T>*);
+    ptr = &visitNode_;
+    ///如果试图使用c++的成员函数作为回调函数，则会发生错误
+    ///使用回调函数的解决方案通常是使用友元，或使用静态成员函数
+    ///在设计这个问题上面，还可以使用仿函数等。
+    showNode_(root,0,ptr);
 
 }
 
@@ -321,7 +339,7 @@ void Btree<T>::updateNodeID_() {
     ///traversal
     queue<BtreeNode<T>* >qu;
     qu.push(root);
-    
+
 
 }
 
@@ -333,6 +351,19 @@ int Btree<T>::getNodeID(BtreeNode<T> *node) {
     }else{
         return it->second;
     }
+}
+
+template <class T>
+void Btree<T>::mapNode_(BtreeNode<T> *node) {
+    if(nodeID.find(node)==nodeID.end()){
+        nodeID[node] = nodeIDnum++;
+    }
+}
+
+
+template<class T>
+void visitNode_(BtreeNode<T> *node) {
+    node->showNode();
 }
 
 
