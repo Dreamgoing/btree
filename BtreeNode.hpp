@@ -43,6 +43,15 @@ public:
         }
         return res;
     }
+    string getLabel(){
+        string res;
+        res.clear();
+        res = "[label=\"";
+        res+=getKeys();
+        res+="\"];";
+        return res;
+
+    }
 
 
 };

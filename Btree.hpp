@@ -18,8 +18,11 @@
 using namespace std;
 using namespace boost;
 
+
+///friend function need forward declaration
 template<class T>
 void visitNode_(BtreeNode<T> *node);
+
 
 template <class T>
 class Btree {
@@ -27,18 +30,26 @@ class Btree {
 private:
     BtreeNode<T>* root;
 
-    map<BtreeNode<T>*,int> nodeID;
+    mutable map<BtreeNode<T>*,int> nodeID;
 
-    vector<BtreeNode<T>*> nodeSet;
+    mutable vector<BtreeNode<T>*> nodeVec;
+public:
+    const vector<BtreeNode<T> *> &getNodeVec() const;
+
+    void setNodeVec(const vector<BtreeNode<T> *> &nodeVec);
+
+private:
 
     int degree = 3;
     ///degree default construction set t = 3
     ///@details: the maximum number of keys,and the keys current node contains range from [degree/2]-1 to degree-1
     ///nil
 
+
+    ///lazy flag
     int nodeNum = 0;
 
-    int nodeIDnum = 1;
+    bool updated = false;
 
 
 private:
@@ -51,7 +62,7 @@ private:
 
     void updateNodeID_();
 
-    void updateNodeSet_();
+    void updatenodeVec_();
 
     void mapNode_(BtreeNode<T>* node);
 
@@ -65,9 +76,10 @@ public:
     void DFSshow();
     void BtreeInsert(const T& k);
     void showBTree();
-    int getNodeID(BtreeNode<T>* node);
-    vector<vector<string> >getAllPath();
+    int getNodeID(BtreeNode<T>* node) const;
+    const vector<pair<int,int> >getAllPath() const;
     int getDegree();
+    BtreeNode<T>* getBtreeNode(int id);
 
 
     ///@todo destroy tree
@@ -124,6 +136,11 @@ void Btree<T>::showNode_(BtreeNode<T> *node,int step,void (*func)(BtreeNode<T>*)
     if(node== nullptr){
         return;
     }
+    if(!updated){
+        if(nodeID.find(node)==nodeID.end()){
+            nodeID[node] = ++nodeNum;
+        }
+    }
     for(int i = 0;i<step;i++){
         cout<<"  ";
     }
@@ -161,7 +178,15 @@ void Btree<T>::DFSshow() {
     ///如果试图使用c++的成员函数作为回调函数，则会发生错误
     ///使用回调函数的解决方案通常是使用友元，或使用静态成员函数
     ///在设计这个问题上面，还可以使用仿函数等。
+
+
+    nodeNum = updated ? nodeNum : 0;
+    ///@todo rename traversal
     showNode_(root,0,ptr);
+    updatenodeVec_();
+
+
+
 
 }
 
@@ -318,23 +343,54 @@ void Btree<T>::showBTree() {
 }
 
 template <class T>
-vector<vector<string> > Btree<T>::getAllPath() {
+
+const vector<pair<int,int> > Btree<T>::getAllPath() const{
+    vector<pair<int,int> > res;
+    res.clear();
+    queue<BtreeNode<T>*> qu;
+    qu.push(root);
+
+    cerr<<"nodeID->size: "<<nodeID.size()<<endl;
+    ///BFS traversal
+
+    while(!qu.empty()){
+        BtreeNode<T>* now = qu.front();
+        qu.pop();
+        int nowID = getNodeID(now);
+        for(auto it:now->children){
+            if(it== nullptr){
+                ///@bug iterator may be nullptr
+//                cout<<"NULL"<<endl;
+                continue;
+            }
+            int dstID = getNodeID(it);
+            res.push_back(make_pair(nowID,dstID));
+            qu.push(it);
+        }
+    }
+    return res;
 
 }
 
 template<class T>
-void Btree<T>::updateNodeSet_() {
-    nodeSet.clear();
-    ///lazy flag to ensure nodeID updated
+void Btree<T>::updatenodeVec_() {
+    nodeVec.clear();
+    int num = static_cast<int>(nodeID.size());
+    
+    ///ensure nums equal
+    assert(num==nodeNum);
+    nodeVec.resize(static_cast<unsigned long>(num));
     for(auto it:nodeID){
-        nodeSet.push_back(it->first);
+        nodeVec[it.second-1] = it.first;
     }
-    ///update lazy flag
+    
+    
+
 }
 
 template<class T>
 void Btree<T>::updateNodeID_() {
-    nodeSet.clear();
+    nodeVec.clear();
     int id = 1;
     ///traversal
     queue<BtreeNode<T>* >qu;
@@ -344,7 +400,7 @@ void Btree<T>::updateNodeID_() {
 }
 
 template <class T>
-int Btree<T>::getNodeID(BtreeNode<T> *node) {
+int Btree<T>::getNodeID(BtreeNode<T> *node) const{
     auto it = nodeID.find(node);
     if(it==nodeID.end()){
         return -1;
@@ -356,7 +412,7 @@ int Btree<T>::getNodeID(BtreeNode<T> *node) {
 template <class T>
 void Btree<T>::mapNode_(BtreeNode<T> *node) {
     if(nodeID.find(node)==nodeID.end()){
-        nodeID[node] = nodeIDnum++;
+        nodeID[node] = ++nodeNum;
     }
 }
 
@@ -364,6 +420,21 @@ void Btree<T>::mapNode_(BtreeNode<T> *node) {
 template<class T>
 void visitNode_(BtreeNode<T> *node) {
     node->showNode();
+}
+
+template <class T>
+BtreeNode<T> *Btree<T>::getBtreeNode(int id) {
+    return nodeVec[id-1];
+}
+
+template <class T>
+const vector<BtreeNode<T> *> &Btree<T>::getNodeVec() const {
+    return nodeVec;
+}
+
+template <class T>
+void Btree<T>::setNodeVec(const vector<BtreeNode<T> *> &nodeVec) {
+    Btree::nodeVec = nodeVec;
 }
 
 

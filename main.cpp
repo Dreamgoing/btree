@@ -1,10 +1,14 @@
 #include <iostream>
 #include "Btree.hpp"
+#include "BtreeVisualize.hpp"
+#include "BtreeVisualize.hpp"
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/graphviz.hpp>
 
 using namespace std;
 using namespace boost;
+
+///@todo thinking how to use pipe or process communication to implement visualization tree.
 
 void testBtreeInsert(){
     Btree<int> btree;
@@ -21,8 +25,8 @@ void testBtreeInsert(){
         cout<<"\n########\n";
         btree.DFSshow();
         cout<<"\n########\n";
-    }
 
+    }
 
 //    btree.DFSshow();
 }
@@ -47,6 +51,19 @@ void testGraph(){
     write_graphviz(cout, g);
 
 }
+void testGetGV(){
+    Btree<int> btree;
+    btree.BtreeInsert(1);
+    btree.BtreeInsert(2);
+    btree.BtreeInsert(3);
+    btree.BtreeInsert(4);
+    btree.BtreeInsert(5);
+    btree.DFSshow();
+    string filePath = "tree.gv";
+    BtreeVisualize::writeGV(btree,filePath);
+
+
+}
 int main() {
 //    std::cout << "Hello, World!" << std::endl;
 
@@ -61,7 +78,8 @@ int main() {
 //    Btree<string> a;
 //    cout<<btree.getDegree()<<endl;
 //    cout<<a.getDegree()<<endl;
-    testBtreeInsert();
+//    testBtreeInsert();
+    testGetGV();
 
 //    testGraph();
     return 0;
