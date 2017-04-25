@@ -21,22 +21,23 @@ using namespace boost;
 
 ///friend function need forward declaration
 template<class T>
-void visitNode_(BtreeNode<T> *node);
+void visitNode_(shared_ptr<BtreeNode<T> >node);
 
 
 template <class T>
 class Btree {
 
 private:
-    BtreeNode<T>* root;
+//    typedef typename BtreeNode<T>::
+    shared_ptr<BtreeNode<T> > root;
 
-    mutable map<BtreeNode<T>*,int> nodeID;
+    mutable map<shared_ptr<BtreeNode<T> >,int> nodeID;
 
-    mutable vector<BtreeNode<T>*> nodeVec;
+    mutable vector<shared_ptr<BtreeNode<T> >> nodeVec;
 public:
-    const vector<BtreeNode<T> *> &getNodeVec() const;
+    const vector<shared_ptr<BtreeNode<T> > > &getNodeVec() const;
 
-    void setNodeVec(const vector<BtreeNode<T> *> &nodeVec);
+    void setNodeVec(const vector<shared_ptr<BtreeNode<T> >> &nodeVec);
 
 private:
 
@@ -54,32 +55,32 @@ private:
 
 private:
 //public:
-    void showNode_(BtreeNode<T>* node,int step,void (*func)(BtreeNode<T>*));
+    void showNode_(shared_ptr<BtreeNode<T> > node,int step,void (*func)(shared_ptr<BtreeNode<T> >));
 
-    void BtreeSpilt_(BtreeNode<T>* x,int pos,BtreeNode<T>* y);
+    void BtreeSpilt_(shared_ptr<BtreeNode<T> > x,int pos,shared_ptr<BtreeNode<T> > y);
 
-    void BtreeInsertNonfull_(BtreeNode<T>* x,const T& k);
+    void BtreeInsertNonfull_(shared_ptr<BtreeNode<T> > x,const T& k);
 
     void updateNodeID_();
 
     void updatenodeVec_();
 
-    void mapNode_(BtreeNode<T>* node);
+    void mapNode_(shared_ptr<BtreeNode<T> > node);
 
-    friend void visitNode_(BtreeNode<T>* node);
+    friend void visitNode_(shared_ptr<BtreeNode<T> > node);
 
 public:
     Btree(int t = 3);
-    pair<BtreeNode<T>*,T> BtreeSearch(BtreeNode<T> *now,const T& k);
+    pair<shared_ptr<BtreeNode<T> >,T> BtreeSearch(shared_ptr<BtreeNode<T> >now,const T& k);
     void BtreeCreate();
     void BFSshow();
     void DFSshow();
     void BtreeInsert(const T& k);
     void showBTree();
-    int getNodeID(BtreeNode<T>* node) const;
+    int getNodeID(shared_ptr<BtreeNode<T> > node) const;
     const vector<pair<int,int> >getAllPath() const;
     int getDegree();
-    BtreeNode<T>* getBtreeNode(int id);
+    shared_ptr<BtreeNode<T> > getBtreeNode(int id);
 
 
     ///@todo destroy tree
@@ -87,7 +88,7 @@ public:
 };
 
 template <class T>
-pair<BtreeNode<T>*, T> Btree<T>::BtreeSearch(BtreeNode<T> *now, const T &k) {
+pair<shared_ptr<BtreeNode<T> >, T> Btree<T>::BtreeSearch(shared_ptr<BtreeNode<T> >now, const T &k) {
     if(now== nullptr){
         ///not found
         return make_pair(nullptr,-1);
@@ -118,10 +119,10 @@ pair<BtreeNode<T>*, T> Btree<T>::BtreeSearch(BtreeNode<T> *now, const T &k) {
 ///@todo consider how to pass a function to implement traversal
 template <class T>
 void Btree<T>::BFSshow() {
-    queue<BtreeNode<T>*> qu;
+    queue<shared_ptr<BtreeNode<T> >> qu;
     qu.push(root);
     while (!qu.empty()){
-        BtreeNode<T>* now = qu.front();
+        shared_ptr<BtreeNode<T> > now = qu.front();
         now->showNode();
         qu.pop();
         for(auto it:now->keys){
@@ -132,7 +133,7 @@ void Btree<T>::BFSshow() {
 
 
 template <class T>
-void Btree<T>::showNode_(BtreeNode<T> *node,int step,void (*func)(BtreeNode<T>*)) {
+void Btree<T>::showNode_(shared_ptr<BtreeNode<T> >node,int step,void (*func)(shared_ptr<BtreeNode<T> >)) {
     if(node== nullptr){
         return;
     }
@@ -173,7 +174,7 @@ void Btree<T>::BtreeCreate() {
 
 template <class T>
 void Btree<T>::DFSshow() {
-    void (*ptr)(BtreeNode<T>*);
+    void (*ptr)(shared_ptr<BtreeNode<T> >);
     ptr = &visitNode_;
     ///如果试图使用c++的成员函数作为回调函数，则会发生错误
     ///使用回调函数的解决方案通常是使用友元，或使用静态成员函数
@@ -191,7 +192,7 @@ void Btree<T>::DFSshow() {
 }
 
 template <class T>
-void Btree<T>::BtreeSpilt_(BtreeNode<T> *x, int pos, BtreeNode<T> *y) {
+void Btree<T>::BtreeSpilt_(shared_ptr<BtreeNode<T> >x, int pos, shared_ptr<BtreeNode<T> >y) {
     /**
      * @param
      * x:a nonfull internal node(parent node)
@@ -199,7 +200,7 @@ void Btree<T>::BtreeSpilt_(BtreeNode<T> *x, int pos, BtreeNode<T> *y) {
      * y:a node which is a full child of x
      * */
 
-    BtreeNode<T>* newNode = new BtreeNode<T>();
+    shared_ptr<BtreeNode<T> > newNode = new BtreeNode<T>();
     nodeNum++;
     newNode->leaf = y->leaf;
     ///newNode resize
@@ -228,7 +229,7 @@ void Btree<T>::BtreeSpilt_(BtreeNode<T> *x, int pos, BtreeNode<T> *y) {
     for(int i = degree/2+1;i<degree-1;i++){
         tmpKeys.push_back(y->keys[i]);
     }
-    vector<BtreeNode<T>* >tmpChildren;
+    vector<shared_ptr<BtreeNode<T> > >tmpChildren;
     tmpChildren.clear();
 
     ///memory error
@@ -271,9 +272,9 @@ void Btree<T>::BtreeSpilt_(BtreeNode<T> *x, int pos, BtreeNode<T> *y) {
 
 template <class T>
 void Btree<T>::BtreeInsert(const T &k) {
-    BtreeNode<T>* tmpRoot = root;
+    shared_ptr<BtreeNode<T> > tmpRoot = root;
     if(tmpRoot->num==degree-1){
-        BtreeNode<T>* node = new BtreeNode<T>;
+        shared_ptr<BtreeNode<T> > node = new BtreeNode<T>;
         nodeNum++;
 
         root = node;
@@ -295,7 +296,7 @@ int Btree<T>::getDegree() {
 }
 
 template <class T>
-void Btree<T>::BtreeInsertNonfull_(BtreeNode<T> *x, const T &k) {
+void Btree<T>::BtreeInsertNonfull_(shared_ptr<BtreeNode<T> >x, const T &k) {
     ///use std::deque finish insert
 
 
@@ -316,7 +317,7 @@ void Btree<T>::BtreeInsertNonfull_(BtreeNode<T> *x, const T &k) {
         ///Disk-Read(x)
     } else{
         ///Disk-Read(it)
-        BtreeNode<T>* child = x->children[pos];
+        shared_ptr<BtreeNode<T> > child = x->children[pos];
         if(child== nullptr){
             ///error
             cerr<<"child is nullptr "<<endl;
@@ -347,14 +348,14 @@ template <class T>
 const vector<pair<int,int> > Btree<T>::getAllPath() const{
     vector<pair<int,int> > res;
     res.clear();
-    queue<BtreeNode<T>*> qu;
+    queue<shared_ptr<BtreeNode<T> >> qu;
     qu.push(root);
 
     cerr<<"nodeID->size: "<<nodeID.size()<<endl;
     ///BFS traversal
 
     while(!qu.empty()){
-        BtreeNode<T>* now = qu.front();
+        shared_ptr<BtreeNode<T> > now = qu.front();
         qu.pop();
         int nowID = getNodeID(now);
         for(auto it:now->children){
@@ -393,14 +394,14 @@ void Btree<T>::updateNodeID_() {
     nodeVec.clear();
     int id = 1;
     ///traversal
-    queue<BtreeNode<T>* >qu;
+    queue<shared_ptr<BtreeNode<T> > >qu;
     qu.push(root);
 
 
 }
 
 template <class T>
-int Btree<T>::getNodeID(BtreeNode<T> *node) const{
+int Btree<T>::getNodeID(shared_ptr<BtreeNode<T> >node) const{
     auto it = nodeID.find(node);
     if(it==nodeID.end()){
         return -1;
@@ -410,7 +411,7 @@ int Btree<T>::getNodeID(BtreeNode<T> *node) const{
 }
 
 template <class T>
-void Btree<T>::mapNode_(BtreeNode<T> *node) {
+void Btree<T>::mapNode_(shared_ptr<BtreeNode<T> >node) {
     if(nodeID.find(node)==nodeID.end()){
         nodeID[node] = ++nodeNum;
     }
@@ -418,22 +419,22 @@ void Btree<T>::mapNode_(BtreeNode<T> *node) {
 
 
 template<class T>
-void visitNode_(BtreeNode<T> *node) {
+void visitNode_(shared_ptr<BtreeNode<T> >node) {
     node->showNode();
 }
 
 template <class T>
-BtreeNode<T> *Btree<T>::getBtreeNode(int id) {
+shared_ptr<BtreeNode<T> > Btree<T>::getBtreeNode(int id) {
     return nodeVec[id-1];
 }
 
 template <class T>
-const vector<BtreeNode<T> *> &Btree<T>::getNodeVec() const {
+const vector<shared_ptr<BtreeNode<T> >> &Btree<T>::getNodeVec() const {
     return nodeVec;
 }
 
 template <class T>
-void Btree<T>::setNodeVec(const vector<BtreeNode<T> *> &nodeVec) {
+void Btree<T>::setNodeVec(const vector<shared_ptr<BtreeNode<T> >> &nodeVec) {
     Btree::nodeVec = nodeVec;
 }
 
