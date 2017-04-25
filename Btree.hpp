@@ -9,14 +9,14 @@
 #include <cassert>
 #include <queue>
 #include <map>
-#include <boost/graph/adjacency_list.hpp>
-#include <boost/graph/graphviz.hpp>
+//#include <boost/graph/adjacency_list.hpp>
+//#include <boost/graph/graphviz.hpp>
 ///@todo thinking in how to use more advanced c++ programming skill
 ///@todo how to implement the iterator of the Btree
 ///@todo thinking use smart ptr  to manager memory
 
 using namespace std;
-using namespace boost;
+//using namespace boost;
 
 
 ///friend function need forward declaration
@@ -163,7 +163,7 @@ Btree<T>::Btree(int degree):degree(degree) {
 template <class T>
 void Btree<T>::BtreeCreate() {
     if(root== nullptr){
-        root = new BtreeNode<T>();
+        root = make_shared<BtreeNode<T> >();
         nodeNum++;
     }
     root->leaf = true;
@@ -200,7 +200,7 @@ void Btree<T>::BtreeSpilt_(shared_ptr<BtreeNode<T> >x, int pos, shared_ptr<Btree
      * y:a node which is a full child of x
      * */
 
-    shared_ptr<BtreeNode<T> > newNode = new BtreeNode<T>();
+    shared_ptr<BtreeNode<T> > newNode = make_shared<BtreeNode<T> >();
     nodeNum++;
     newNode->leaf = y->leaf;
     ///newNode resize
@@ -274,7 +274,7 @@ template <class T>
 void Btree<T>::BtreeInsert(const T &k) {
     shared_ptr<BtreeNode<T> > tmpRoot = root;
     if(tmpRoot->num==degree-1){
-        shared_ptr<BtreeNode<T> > node = new BtreeNode<T>;
+        shared_ptr<BtreeNode<T> > node(make_shared<BtreeNode<T> >());
         nodeNum++;
 
         root = node;
@@ -338,8 +338,8 @@ void Btree<T>::BtreeInsertNonfull_(shared_ptr<BtreeNode<T> >x, const T &k) {
 
 template <class T>
 void Btree<T>::showBTree() {
-    typedef  adjacency_list< listS, vecS, undirectedS > undirectedGraph;
-    undirectedGraph graph1;
+//    typedef  adjacency_list< listS, vecS, undirectedS > undirectedGraph;
+//    undirectedGraph graph1;
 
 }
 

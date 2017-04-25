@@ -18,7 +18,7 @@ public:
     BtreeNode(){}
     BtreeNode(const T& t):key(t),num(0){}
 public:
-    vector<BtreeNode<T>*> children;
+    vector<shared_ptr<BtreeNode<T> > > children;
     vector<T> keys;
     T key;
     size_t num;
