@@ -81,6 +81,7 @@ public:
     const vector<pair<int,int> >getAllPath() const;
     int getDegree();
     shared_ptr<BtreeNode<T> > getBtreeNode(int id);
+    void BtreeDelete(const T& k);
 
 
     ///@todo destroy tree
@@ -436,6 +437,11 @@ const vector<shared_ptr<BtreeNode<T> >> &Btree<T>::getNodeVec() const {
 template <class T>
 void Btree<T>::setNodeVec(const vector<shared_ptr<BtreeNode<T> >> &nodeVec) {
     Btree::nodeVec = nodeVec;
+}
+
+template <class T>
+void Btree<T>::BtreeDelete(const T &k) {
+
 }
 
 
