@@ -11,12 +11,14 @@
 
 using namespace std;
 
-template <class T>
-class BtreeNode{
+template<class T>
+class BtreeNode {
 
 public:
-    BtreeNode(){}
-    BtreeNode(const T& t):key(t),num(0){}
+    BtreeNode() {}
+
+    BtreeNode(const T &t) : key(t), num(0) {}
+
 public:
     vector<shared_ptr<BtreeNode<T> > > children;
     vector<T> keys;
@@ -27,28 +29,30 @@ public:
 
     ///一部分磁盘块文件
 
-    void showNode(){
-        for(auto it:keys){
-            cout<<it<<" ";
+    void showNode() {
+        for (auto it:keys) {
+            cout << it << " ";
         }
-        cout<<'\n';
+        cout << '\n';
     }
-    string getKeys(){
+
+    string getKeys() {
         string res;
         res.clear();
         res = "| ";
-        for(auto it:keys){
-            res+=to_string(it);
-            res+=" | ";
+        for (auto it:keys) {
+            res += to_string(it);
+            res += " | ";
         }
         return res;
     }
-    string getLabel(){
+
+    string getLabel() {
         string res;
         res.clear();
         res = "[label=\"";
-        res+=getKeys();
-        res+="\"];";
+        res += getKeys();
+        res += "\"];";
         return res;
 
     }
