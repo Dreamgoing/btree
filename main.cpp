@@ -58,6 +58,7 @@ void testGetGV(){
     btree.BtreeInsert(3);
     btree.BtreeInsert(4);
     btree.BtreeInsert(5);
+    btree.BtreeInsert(6);
     btree.DFSshow();
     string filePath = "tree.gv";
     BtreeVisualize::writeGV(btree,filePath);

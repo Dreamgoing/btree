@@ -7,8 +7,23 @@
 
 ///@brief BtreeIterator class using iterator design pattern
 
+//#include "Btree.hpp"
+//#include "BtreeNode.hpp"
+#include <iterator>
 
+///@param T          Template for Btree
+template <class T>
+struct BtreeIterator_traits{
+    typedef typename T::value_type;
+    typedef typename T::pointer;
+};
+
+template <class T>
 class BtreeIterator{
+
+
+
+
 
 };
 

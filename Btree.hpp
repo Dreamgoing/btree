@@ -6,6 +6,7 @@
 #define BTREE_BTREE_HPP
 
 #include "BtreeNode.hpp"
+#include "BtreeIterator.hpp"
 #include <cassert>
 #include <queue>
 #include <map>
@@ -27,13 +28,23 @@ void visitNode_(shared_ptr<BtreeNode<T> > node);
 template<class T>
 class Btree {
 
+
+public:
+    ///type
+    typedef T value_type;
+    typedef BtreeNode<T>* pointer;
+    typedef typename vector<pointer>::iterator btree_iterator;
+
 private:
 //    typedef typename BtreeNode<T>::
     shared_ptr<BtreeNode<T> > root;
 
     mutable map<shared_ptr<BtreeNode<T> >, int> nodeID;
 
+    ///ordered result
     mutable vector<shared_ptr<BtreeNode<T> >> nodeVec;
+
+    mutable vector<BtreeNode<T>* >nodeptrVec;
 public:
     const vector<shared_ptr<BtreeNode<T> > > &getNodeVec() const;
 
@@ -93,6 +104,7 @@ public:
     shared_ptr<BtreeNode<T> > getBtreeNode(int id);
 
     void BtreeDelete(const T &k);
+
 
 
     ///@todo destroy tree
@@ -451,6 +463,7 @@ template<class T>
 void Btree<T>::BtreeDelete(const T &k) {
 
 }
+
 
 
 #endif //BTREE_BTREE_HPP
