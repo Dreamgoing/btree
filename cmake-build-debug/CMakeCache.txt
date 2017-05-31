@@ -14,15 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//The directory containing a CMake configuration file for /usr/local/include/graphviz.
-/usr/local/include/graphviz_DIR:PATH=/usr/local/include/graphviz_DIR-NOTFOUND
-
-//Boost *boost library (debug)
-Boost_*BOOST_LIBRARY_DEBUG:FILEPATH=Boost_*BOOST_LIBRARY_DEBUG-NOTFOUND
-
-//Boost *boost library (release)
-Boost_*BOOST_LIBRARY_RELEASE:FILEPATH=Boost_*BOOST_LIBRARY_RELEASE-NOTFOUND
-
 //The directory containing a CMake configuration file for Boost.
 Boost_DIR:PATH=Boost_DIR-NOTFOUND
 
@@ -240,9 +231,6 @@ btree_BINARY_DIR:STATIC=/Users/wangruoxuan/ClionProjects/btree/cmake-build-debug
 //Value Computed by CMake
 btree_SOURCE_DIR:STATIC=/Users/wangruoxuan/ClionProjects/btree
 
-//Dependencies for target
-graph_lib_LIB_DEPENDS:STATIC=
-
 
 ########################
 # INTERNAL cache entries
@@ -281,7 +269,7 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=7
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.

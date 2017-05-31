@@ -1,1 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -g -dynamiclib -Wl,-headerpad_max_install_names  -o libgraph_lib.dylib -install_name @rpath/libgraph_lib.dylib CMakeFiles/graph_lib.dir/usr/local/include/graphviz/gv.cpp.o 
